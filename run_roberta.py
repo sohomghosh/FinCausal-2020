@@ -36,7 +36,7 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
-from utils import FinDataset, Split, get_labels, get_pos_labels
+from nonpos_utils import FinDataset, Split, get_labels#, get_pos_labels
 
 
 logger = logging.getLogger(__name__)
