@@ -136,9 +136,9 @@ def main():
     label_map: Dict[int, str] = {i: label for i, label in enumerate(labels)}
     num_labels = len(labels)
 
-    pos_labels = get_pos_labels('data/pos_tags.txt')
-    pos_label_map: Dict[int, str] = {i: label for i, label in enumerate(pos_labels)}
-    num_pos_labels = len(pos_labels)
+    #pos_labels = get_pos_labels('data/pos_tags.txt')
+    #pos_label_map: Dict[int, str] = {i: label for i, label in enumerate(pos_labels)}
+    #num_pos_labels = len(pos_labels)
 
     # Load pretrained model and tokenizer
     #
