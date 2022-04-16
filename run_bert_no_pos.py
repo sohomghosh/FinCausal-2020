@@ -28,8 +28,8 @@ from torch import nn
 
 from transformers import (
     AutoConfig,
-    RobertaTokenizer, 
-    RobertaForTokenClassification,
+    AutoModelForTokenClassification,
+    AutoTokenizer,
     EvalPrediction,
     HfArgumentParser,
     Trainer,
@@ -156,12 +156,12 @@ def main():
         #add_pos=training_args.add_pos,
         cache_dir=model_args.cache_dir,
     )
-    tokenizer = RobertaTokenizer.from_pretrained(
+    tokenizer = AutoTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
         cache_dir=model_args.cache_dir,
         use_fast=model_args.use_fast,
     )
-    model = RobertaForTokenClassification.from_pretrained(
+    model = AutoModelForTokenClassification.from_pretrained(
         model_args.model_name_or_path,
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
