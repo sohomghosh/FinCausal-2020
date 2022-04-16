@@ -148,9 +148,9 @@ def main():
 
     config = AutoConfig.from_pretrained(
         model_args.config_name if model_args.config_name else model_args.model_name_or_path,
-        num_labels=num_labels,
-        id2label=label_map,
-        label2id={label: i for i, label in enumerate(labels)},
+        #num_labels=num_labels,
+        #id2label=label_map,
+        #label2id={label: i for i, label in enumerate(labels)},
         #id2poslabel=pos_label_map,
         #num_pos_labels=num_pos_labels,
         #add_pos=training_args.add_pos,
@@ -159,13 +159,13 @@ def main():
     tokenizer = RobertaTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
         #cache_dir=model_args.cache_dir,
-        use_fast=model_args.use_fast,
+        #use_fast=model_args.use_fast,
     )
     model = RobertaForTokenClassification.from_pretrained(
         model_args.model_name_or_path,
-        from_tf=bool(".ckpt" in model_args.model_name_or_path),
+        #from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
-        cache_dir=model_args.cache_dir,
+        #cache_dir=model_args.cache_dir,
     )
 
     # Get datasets
