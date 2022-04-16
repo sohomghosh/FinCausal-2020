@@ -154,11 +154,11 @@ def main():
         #id2poslabel=pos_label_map,
         #num_pos_labels=num_pos_labels,
         #add_pos=training_args.add_pos,
-        cache_dir=model_args.cache_dir,
+        #cache_dir=model_args.cache_dir,
     )
     tokenizer = RobertaTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
-        cache_dir=model_args.cache_dir,
+        #cache_dir=model_args.cache_dir,
         use_fast=model_args.use_fast,
     )
     model = RobertaForTokenClassification.from_pretrained(
